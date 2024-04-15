@@ -1,0 +1,1 @@
+nohup ~/projects/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8005 --ssl-keyfile ~/.acme.sh/py.cirray.cn_ecc/py.cirray.cn.key --ssl-certfile ~/.acme.sh/py.cirray.cn_ecc/py.cirray.cn.cer >> ~/temp/py.log &
