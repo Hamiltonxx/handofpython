@@ -44,6 +44,13 @@ CREATE TABLE IF NOT EXISTS submission(
     createtime TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS vericode(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    code INT NOT NULL,
+    phone varchar(16) NOT NULL,
+    createtime TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO collection(name) VALUES('Python编程: 从入门到实践');
 
 INSERT INTO problem(title,description,cid,chapter,codeinit) VALUES('打印Hello World', '参考注释行,输入print语句,运行', 1, 1, '# print("Hello, World!")');

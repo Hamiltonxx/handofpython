@@ -2,9 +2,15 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from toolkit import get_cnx
 
+from router_user import router as userrouter
+from router_misc import router as miscrouter
+
 app = FastAPI()
 # 添加CORS中间件
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+# 添加router
+app.include_router(userrouter)
+app.include_router(miscrouter)
 
 @app.get('/')
 def hello():
