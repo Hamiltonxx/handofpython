@@ -1,4 +1,5 @@
 import random 
+import string 
 import mysql.connector
 dbconfig = {"host":"aigc.cirray.cn","user":"aigc","password":"aigc2023","database":"pydb"}
 
@@ -12,3 +13,6 @@ def get_cnx():
 
 # def random_digits(length):
 #     return random.randrange(10**(length-1), 10**length)
+def random_string(length):
+    letters = string.ascii_letters + string.digits
+    return ''.join(random.choice(letters) for _ in range(length))

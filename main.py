@@ -4,6 +4,7 @@ from toolkit import get_cnx
 
 from router_user import router as userrouter
 from router_misc import router as miscrouter
+from router_submission import router as subrouter
 
 app = FastAPI()
 # 添加CORS中间件
@@ -11,6 +12,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 # 添加router
 app.include_router(userrouter)
 app.include_router(miscrouter)
+app.include_router(subrouter)
 
 @app.get('/')
 def hello():
