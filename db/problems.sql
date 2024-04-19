@@ -9,3 +9,9 @@ INSERT INTO problem(title,description,chapter,codeinit) VALUES('嘉宾名单', '
 INSERT INTO problem(title,description,chapter,codeinit) VALUES('修改嘉宾名单', '上题中有位嘉宾刚通知你无法赴约，因此需要另外邀请一位嘉宾。 \n1. 用print()指出哪位嘉宾无法赴约; \n2. 修改嘉宾名单，将无法赴约的嘉宾替换为新的嘉宾; \n3. 再次打印消息，邀请他们', 3, 'guests=["Jim","Kate","Bob"]\n\n');
 INSERT INTO problem(title,description,chapter,codeinit) VALUES('添加嘉宾', '你刚找到一张更大的餐桌，能容纳更多嘉宾入座，想想你还想邀请哪三位嘉宾。\n1. 用insert()将一位嘉宾添加到名单开头; \n2. 用insert()将另一位嘉宾添加到名单中间; \n3. 用append()将最后一名嘉宾添加到名单末尾。 ', 3, 'guests=["Jim","Merry","Bob"]\n\n');
 INSERT INTO problem(title,description,chapter,codeinit) VALUES('缩短名单', '你刚得知新购买的餐桌无法及时送达，因此只能邀请两位嘉宾。 \n1. 使用pop()不断地删除名单中的嘉宾，直到只有两位嘉宾为止。每次从名单中弹出一位嘉宾时，都打印一条消息，让嘉宾知道你很抱歉，无法邀请他共进晚餐; \n2.对余下的每位嘉宾都打印一条消息，指出他们依然在受邀之列; \n3.使用del将最后两位嘉宾从名单中删除。打印该名单，核实名单是空的。', 3, 'guests=["Mike","Jim","Lisa","Merry","Bob","Frank"]\n\n');
+
+INSERT INTO problem(title,description,chapter,codeinit) VALUES('放眼世界', '想出至少5个你想去旅游的地方。 \n1. 将这些地方存储在一个列表中。 \n2. 按原顺序打印列表。 \n3. 使用sorted()按字母顺序打印列表。 \n4. 再次打印核实该列表顺序未变。 \n5. 使用sorted()按字母反序打印列表。 \n6.再次打印核实列表顺序未变。 \n7.使用reverse()改变排列顺序，并核实顺序变了。 \n8.再次使用reverse(),并核实列表恢复原来的排列顺序。 \n9.使用sort()按字母顺序排序，并核实顺序变了。 \n10. 使用sort()按字母顺序反序，并核实顺序变了。', 3, '');
+INSERT INTO problem(title,description,chapter,codeinit) VALUES('目的地数', '使用len()指出上题中，你的旅游目的地数', 3, '');
+INSERT INTO problem(title,description,chapter,codeinit) VALUES('喜欢去哪旅游', '1. 使用for循环，将上题中的目的地都打印出来。 \n2. 修改这个for循环, 循环打印包含目的地的句子，比如 I like Osaka  \n3. 程序末尾添加打印，你有多喜欢旅游。 I love traveling very much.', 4, '');
+INSERT INTO problem(title,description,chapter,codeinit) VALUES('数到20', '使用一个for循环打印数 1~20(含)。', 4, '');
+

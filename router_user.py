@@ -4,6 +4,17 @@ from toolkit import get_cnx, random_string
 
 router = APIRouter()
 
+# JUST for TEST purpose
+@router.get('/auth/{id}')
+def get_test_auth(id:int, cnx=Depends(get_cnx)):
+    '''此auth header仅用来测试'''
+    cur = cnx.cursor(buffered=True)
+    sql = f"select token FROM user WHERE id={id}"
+    print(sql)
+    cur.execute(sql)
+    result = cur.fetchone()
+    return {"token":result[0]}
+
 @router.post('/send_vericode', tags=["用户"])
 def send_vericode(phone:str=Body(embed=True), cnx=Depends(get_cnx)):
     '''手机号登录前, 需要获取4位验证码  
