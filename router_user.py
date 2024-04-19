@@ -11,13 +11,17 @@ def send_vericode(phone:str=Body(embed=True), cnx=Depends(get_cnx)):
     cur = cnx.cursor(buffered=True)
     randcode = random.randint(1000,9999)
     # 查看验证码获取是否频繁
-    # 把验证码插入user表
-    sql = f"INSERT INTO user(phone,vericode) VALUES('{phone}',{randcode})"
+    # 把验证码插入user表,先查表看是insert还是update
+    sql = f"UPDATE user SET vericode={randcode} WHERE phone='{phone}'"
     print(sql)
     cur.execute(sql)
     cnx.commit()
-    userid = cur.lastrowid
-    return {"userid":userid, "phone":phone, "vericode":randcode}
+    if cur.rowcount == 0: 
+        sql = f"INSERT INTO user(phone,vericode) VALUES('{phone}',{randcode})"
+        print(sql)
+        cur.execute(sql)
+        cnx.commit()
+    return {"phone":phone, "vericode":randcode}
 
 @router.post('/vericode_login', tags=["用户"])
 def vericode_login(phone:str=Body(embed=True),vericode:int=Body(embed=True),cnx=Depends(get_cnx)):
